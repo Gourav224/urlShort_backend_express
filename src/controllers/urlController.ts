@@ -3,7 +3,8 @@ import validUrl from "valid-url";
 import shortid from "shortid";
 import urlModel from "../models/url.model";
 
-const baseUrl = process.env.BASE_URL || "http://localhost:3000";
+const baseUrl = process.env.BASE_URL || "http://localhost:3000"; 
+
 
 // Function to shorten the URL
 export const shortenUrl = async (req: Request, res: Response) => {
@@ -27,7 +28,7 @@ export const shortenUrl = async (req: Request, res: Response) => {
       }
 
       // If not found, create a new shortened URL
-      const shortUrl = `${baseUrl}/${urlCode}`;
+      const shortUrl = `${baseUrl}/api/${urlCode}`;
 
       url = new urlModel({
         originalUrl,
